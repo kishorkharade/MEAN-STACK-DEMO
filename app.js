@@ -9,7 +9,7 @@ var invoices =require('./routes/invoices');
 
 //Mongoose Connect
 mongoose.connect(process.env.DBPATH);
-var db =mongoose.connection;
+var db =mongoose.connection || 'mongodb://localhost:27017/test';
 
 app.use(express.static(__dirname+ '/client'));
 app.use(bodyParser.json());
