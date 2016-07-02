@@ -8,8 +8,8 @@ var customers = require('./routes/customers');
 var invoices =require('./routes/invoices');
 
 //Mongoose Connect
-mongoose.connect(process.env.DBPATH);
-var db =mongoose.connection || 'mongodb://localhost:27017/test';
+mongoose.connect(process.env.DBPATH || 'mongodb://localhost:27017/test');
+var db =mongoose.connection ;
 
 app.use(express.static(__dirname+ '/client'));
 app.use(bodyParser.json());
